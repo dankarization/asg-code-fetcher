@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily ASG lift code Telegram send
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+Persistent=true
+Unit=asg-code-daily.service
+
+[Install]
+WantedBy=timers.target

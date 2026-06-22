@@ -1,0 +1,15 @@
+[Unit]
+Description=ASG lift code Telegram bot poller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.local/share/asg-code-fetcher
+EnvironmentFile=%h/.config/asg-code-fetcher/env
+ExecStart=%h/.local/share/asg-code-fetcher/asg_code_bot.py poll
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

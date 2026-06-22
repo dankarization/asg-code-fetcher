@@ -1,0 +1,10 @@
+[Unit]
+Description=Send ASG lift code to Telegram recipients
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.local/share/asg-code-fetcher
+EnvironmentFile=%h/.config/asg-code-fetcher/env
+ExecStart=%h/.local/share/asg-code-fetcher/asg_code_bot.py send
