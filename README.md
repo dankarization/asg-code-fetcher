@@ -10,17 +10,17 @@ No AI or emulator is needed at runtime.
 
 ```mermaid
 flowchart TD
-    A[ASG mobile app login once] --> B[Extract flutter.token]
-    B --> C[Local env: ASG_TOKEN]
-    D[Local env: ASG_APPLICATION_TOKEN] --> E[asg_get_code.py]
+    A["ASG mobile app login once"] --> B["Extract flutter.token"]
+    B --> C["Local env: ASG_TOKEN"]
+    D["Local env: ASG_APPLICATION_TOKEN"] --> E["asg_get_code.py"]
     C --> E
-    E --> F[asg.ge 24h code endpoint]
-    F --> G[Current lift code + expiry]
-    G --> H[asg_code_bot.py]
-    H --> I[/code on demand]
-    H --> J[systemd daily timer]
-    H --> K[/qr on demand]
-    I --> L[Allowed Telegram users]
+    E --> F["asg.ge 24h code endpoint"]
+    F --> G["Current lift code + expiry"]
+    G --> H["asg_code_bot.py"]
+    H --> I["/code on demand"]
+    H --> J["systemd daily timer"]
+    H --> K["/qr on demand"]
+    I --> L["Allowed Telegram users"]
     J --> L
     K --> L
 ```
